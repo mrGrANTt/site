@@ -10,20 +10,19 @@ const task = document.getElementById('task')
 const done = document.getElementById('done')
 
 
-let day = 'пн'
-let lastDay = 'пн'
-let shadow = '2px 2px 0 rgb(44, 121, 37)'
-let background_color = 'rgb(59, 160, 49)'
-let select_btn = btn_Mon
+let day = ''
+let lastDay = ''
+let shadow = ''
+let background_color = ''
+let select_btn
 let openWiki = false
 
-select_btn.style.backgroundColor = 'rgb(100, 100, 100)'
-select_btn.style.boxShadow = '2px 2px 0 rgba(105, 105, 105, 0)'
-
-function check(obj) {
+function selectCssStyle(obj) {
     if(day != lastDay) {
-        select_btn.style.backgroundColor = background_color
-        select_btn.style.boxShadow = shadow
+        if(lastDay.length != 0) {
+            select_btn.style.backgroundColor = background_color
+            select_btn.style.boxShadow = shadow
+        }
         
         shadow = obj.style.boxShadow
         background_color = obj.style.backgroundColor
@@ -35,10 +34,11 @@ function check(obj) {
     }
 }
 
+//day + ', ' + lastDay + ', ' + shadow + ', ' + background_color
 function setNewDay(tempday, url, obj) {
     lastDay = day
     day = tempday
-    check(obj)
+    selectCssStyle(obj)
     if (openWiki) {
         open(url,  '', 'left=1000,top=500,width=500,height=350')
     }
