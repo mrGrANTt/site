@@ -34,7 +34,6 @@ function selectCssStyle(obj) {
     }
 }
 
-//day + ', ' + lastDay + ', ' + shadow + ', ' + background_color
 function setNewDay(tempday, url, obj) {
     lastDay = day
     day = tempday

@@ -71,3 +71,41 @@ h1 {
   background-color: rgb(109, 109, 109);
   box-shadow: none;
 }
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  background-color: rgb(141, 108, 64);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: -40px;
+
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 1000px;
+
+  border-radius: 15px;
+
+  font-size: 120%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.tasks {
+  scale: 100%;
+  border-radius: 10px;
+  background-color: brown;
+  border-style: none;
+  margin-right: 10px;
+  text-size-adjust: 10px;
+  font-size: 20px;
+  font: bold;
+  font-family: cursive;
+}
+
+.tasks:active {
+  background-color: rgb(117, 30, 30);
+}
