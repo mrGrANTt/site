@@ -42,7 +42,8 @@ function setNewDay(tempday, url, obj) {
         open(url,  '', 'left=1000,top=500,width=500,height=350')
     }
 }
-
+const i = (b) => b+1000
+console.log(i(2))
 btn_Mon.onclick = function () {
     setNewDay('пн', 'https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA', this)
 }
