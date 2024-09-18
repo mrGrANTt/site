@@ -7,7 +7,9 @@ document.getElementById('Sat').onclick = function () { setNewDay('сб', 'https:
 document.getElementById('Sun').onclick = function () { setNewDay('вс', 'https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D1%81%D0%BA%D1%80%D0%B5%D1%81%D0%B5%D0%BD%D1%8C%D0%B5', this) }
 
 const task = document.getElementById('task')
+const input = document.getElementById('input')
 const done = document.getElementById('done')
+
 
 /* 
 <li id="0">
@@ -22,8 +24,24 @@ let shadow = ''
 let background_color = ''
 let select_btn
 
+let array = []
+
+class TaskListElement {
+    constructor(index, context) {
+        this.html = `<li id="${index}">
+                    <button id="b${index}" class="tasks">🞬</button>
+                    ${context}
+                </li>`
+    }
+    toString() {
+        return this.html
+    }
+}
+
 //true чтобы открывать окна с википедией
 let openWiki = false
+
+console.dir(task)
 
 function selectCssStyle(obj) {
     if(day != lastDay) {
@@ -50,3 +68,7 @@ function setNewDay(tempday, url, obj) {
         open(url,  '', 'left=1000,top=500,width=500,height=350')
     }
 }
+
+array.push(new TaskListElement(array.length, input.value))
+
+task.insertAdjacentHTML('beforeend', array[array.length-1])
